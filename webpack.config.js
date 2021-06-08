@@ -3,7 +3,7 @@
  * @Author: qxp
  * @Date: 2021-05-06 14:56:46
  * @LastEditors: qxp
- * @LastEditTime: 2021-05-06 16:34:49
+ * @LastEditTime: 2021-05-12 10:28:43
  */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -76,6 +76,16 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     'css-loader',
                     'less-loader'
+                ]
+            },
+            {
+                /**
+                 * less
+                 */
+                test: /\.(jpg|png)?$/,
+                include: path.resolve(__dirname, 'src'),
+                use: [
+                    'file-loader'
                 ]
             }
         ]
